@@ -3,7 +3,7 @@
 
 // For GET Requests
 
-#[derive(serde::Serialize)]
+#[derive(serde::Serialize, sqlx::FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct Board {
     pub id: i64,
@@ -11,7 +11,7 @@ pub struct Board {
     pub created_at: chrono::DateTime<chrono::Utc>,
 }
 
-#[derive(serde::Serialize)]
+#[derive(serde::Serialize, sqlx::FromRow)]
 #[serde(rename_all = "camelCase")]
 pub struct Card {
     pub id: i64,
@@ -22,19 +22,37 @@ pub struct Card {
     pub created_at: chrono::DateTime<chrono::Utc>,
 }
 
-#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(serde::Serialize, serde::Deserialize, sqlx::Type)]
 #[serde(rename_all = "camelCase")]
+#[sqlx(rename_all = "camelCase")]
 pub enum CardStatus {
     Todo,
     InProgress,
     Done,
 }
 
-#[derive(serde::Serialize)]
+#[derive(serde::Serialize, Default)]
 pub struct BoardSummary {
     pub todo: i64,
     pub in_progress: i64,
     pub done: i64,
+}
+
+// convert list of status counts into a BoardSummary
+impl From<Vec<(i64, CardStatus)>> for BoardSummary {
+    fn from(counts: Vec<(i64, CardStatus)>) -> Self {
+        let mut summary = BoardSummary::default();
+
+        for (count, status) in counts {
+            match status {
+                CardStatus::Todo => summary.todo += count,
+                CardStatus::InProgress => summary.in_progress += count,
+                CardStatus::Done => summary.done += count,
+            }
+        }
+
+        summary
+    }
 }
 
 
