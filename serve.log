@@ -1,0 +1,3 @@
+[01:21:31][async_RESTful_api::logger][INFO] Logging initialized
+[01:21:31][async_RESTful_api::logger][WARN] This is a warning message
+[01:21:31][async_RESTful_api::logger][ERROR] This is an error message

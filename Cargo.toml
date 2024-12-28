@@ -4,3 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+chrono = "0.4.39"
+dotenvy = "0.15.7"
+fern = "0.7.1"
+log = "0.4.22"
