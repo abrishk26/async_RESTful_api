@@ -1,3 +1,20 @@
-[01:21:31][async_RESTful_api::logger][INFO] Logging initialized
-[01:21:31][async_RESTful_api::logger][WARN] This is a warning message
-[01:21:31][async_RESTful_api::logger][ERROR] This is an error message
+[23:29:46][async_RESTful_api::logger][INFO] Logging initialized
+[23:29:46][async_RESTful_api::logger][WARN] This is a warning message
+[23:29:46][async_RESTful_api::logger][ERROR] This is an error message
+[23:29:46][actix_server::builder][INFO] starting 12 workers
+[23:29:46][actix_server::server][INFO] Actix runtime found; starting in Actix runtime
+[23:29:46][actix_server::server][INFO] starting service: "actix-web-service-127.0.0.1:8080", workers: 12, listening on: 127.0.0.1:8080
+[23:30:15][actix_server::server][INFO] SIGINT received; starting forced shutdown
+[23:30:15][actix_server::accept][INFO] accept thread stopped
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker
+[23:30:15][actix_server::worker][INFO] shutting down idle worker

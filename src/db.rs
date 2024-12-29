@@ -1,7 +1,8 @@
-use sqlx::{Connection, PgConnection, Pool, Postgres, postgres::PgPoolOptions};
+use sqlx::{Pool, Postgres, postgres::PgPoolOptions};
 use crate::models::*;
 use crate::StdErr;
 
+#[derive(Clone)]
 pub struct Db {
     pool: Pool<Postgres>,
 }
